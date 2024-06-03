@@ -1,4 +1,4 @@
-ARG BASE_IMAGE="nvidia/cuda:12.1.0-runtime-ubuntu22.04"
+ARG BASE_IMAGE="nvidia/cuda:11.8.0-runtime-ubuntu22.04"
 
 FROM ${BASE_IMAGE}
 ARG BASE_IMAGE
@@ -9,8 +9,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y git pyth
     && apt-get clean
 
 ARG BUILD_LOCAL_CODE="false"
-ARG LANGUAGE="en"
-ARG PIP_INDEX_URL="https://pypi.org/simple"
+ARG LANGUAGE="zh"
+ARG PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 ENV PIP_INDEX_URL=$PIP_INDEX_URL
 
 ARG DB_GPT_INSTALL_MODEL="default"
